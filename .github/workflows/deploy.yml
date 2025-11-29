@@ -1,0 +1,55 @@
+name: Desplegar a GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Esto se ejecuta cuando haces push a la rama principal
+  workflow_dispatch: # Permite ejecutar el workflow manualmente desde la interfaz de GitHub
+
+# Permisos necesarios para que GitHub Actions pueda crear y publicar la página
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Regla de concurrencia: si un despliegue ya está en curso, cancela el anterior.
+# Esto previene el error 'due to in progress deployment' que estabas teniendo.
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      # Define el entorno de despliegue, que es 'github-pages'
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        # React necesita Node.js para construir el proyecto. Usamos la versión 18
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "npm"
+
+      - name: Instalar dependencias
+        run: npm ci # Usa 'npm ci' para una instalación limpia y rápida en CI/CD
+
+      - name: Construir el proyecto (npm run build)
+        # Esto ejecuta el comando de React que crea la carpeta 'dist' (o 'build')
+        run: npm run build
+
+      # Este paso reemplaza a 'actions/configure-pages' que causaba conflictos
+      - name: Subir artefacto para Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # IMPORTANTE: Asegúrate de que 'dist' es la carpeta que crea 'npm run build'
+          path: "./dist" 
+
+      - name: Desplegar a GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4 # La acción oficial para el despliegue final
