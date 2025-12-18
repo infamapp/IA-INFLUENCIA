@@ -21,7 +21,7 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <img src="public/image.png" alt="The INFAMA Creative" className="h-12" />
+            <img src={`${import.meta.env.BASE_URL}image.png`} alt="The INFAMA Creative" className="h-12" />
           </div>
 
           {/* Desktop Navigation */}

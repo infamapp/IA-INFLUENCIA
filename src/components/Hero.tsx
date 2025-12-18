@@ -33,10 +33,13 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="group bg-gradient-to-r from-pink-500 to-fuchsia-400 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-xl hover:shadow-pink-500/50 transition-all duration-300 flex items-center justify-center space-x-2">
+              <a 
+                href="#contact"
+                className="group bg-gradient-to-r from-pink-500 to-fuchsia-400 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-xl hover:shadow-pink-500/50 transition-all duration-300 flex items-center justify-center space-x-2"
+              >
                 <span>Comenzar Ahora</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
 
               <button className="group bg-gray-900 border-2 border-pink-500/50 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:border-pink-500 hover:bg-pink-500/10 transition-all duration-300 flex items-center justify-center space-x-2">
                 <Play className="w-5 h-5 text-pink-500" />

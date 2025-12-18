@@ -53,7 +53,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="col-span-2">
             <div className="mb-4">
-              <img src="/image.png" alt="The INFAMA Creative" className="h-10" />
+              <img src={`${import.meta.env.BASE_URL}image.png`} alt="The INFAMA Creative" className="h-10" />
             </div>
             <p className="text-gray-400 mb-6 max-w-xs">
               La plataforma todo-en-uno que empodera a creadores de contenido
