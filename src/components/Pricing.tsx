@@ -1,5 +1,6 @@
 import { Building2, Layers, Zap } from 'lucide-react';
 import TiltCard from './TiltCard';
+import Reveal from './Reveal';
 
 const models = [
   {
@@ -43,10 +44,14 @@ const faqs = [
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-24 px-4 sm:px-6 lg:px-8 bg-black">
+    <section id="pricing" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-black overflow-hidden">
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute bottom-0 left-1/3 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl animate-float-delayed" />
+      </div>
+
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
+        <Reveal className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-pink-500/20 px-4 py-2 rounded-full border border-pink-500/30 mb-4">
             <Zap className="w-4 h-4 text-pink-500" />
             <span className="text-sm font-medium text-pink-500">Cómo Colaboramos</span>
@@ -60,7 +65,7 @@ export default function Pricing() {
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Sin planes cerrados: te contamos cómo encajaría tu proyecto y presupuesto a medida.
           </p>
-        </div>
+        </Reveal>
 
         {/* Models */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
@@ -80,7 +85,7 @@ export default function Pricing() {
         </div>
 
         {/* FAQ Section */}
-        <div className="bg-gray-900 rounded-2xl p-12">
+        <Reveal className="bg-gray-900 rounded-2xl p-12">
           <h3 className="text-3xl font-bold text-center mb-8 text-white">Preguntas Frecuentes</h3>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {faqs.map((faq) => (
@@ -90,7 +95,7 @@ export default function Pricing() {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -1,5 +1,6 @@
 import { Camera, Clapperboard, Music, PartyPopper, Sparkle, Store } from 'lucide-react';
 import TiltCard from './TiltCard';
+import Reveal from './Reveal';
 
 const categories = [
   {
@@ -44,7 +45,7 @@ export default function Work() {
   return (
     <section id="work" className="py-24 px-4 sm:px-6 lg:px-8 bg-black">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+        <Reveal className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-fuchsia-500/20 px-4 py-2 rounded-full border border-fuchsia-500/30 mb-4">
             <Clapperboard className="w-4 h-4 text-fuchsia-400" />
             <span className="text-sm font-medium text-fuchsia-400">Áreas de Producción</span>
@@ -59,7 +60,7 @@ export default function Work() {
             Un mismo equipo creativo que se mueve entre lo digital y lo físico: contenido, campañas
             y también la producción y el montaje de eventos en vivo.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {categories.map((category) => (

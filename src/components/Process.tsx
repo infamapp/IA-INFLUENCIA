@@ -1,4 +1,5 @@
 import { ArrowRight, Compass, PenTool, Rocket, Wrench } from 'lucide-react';
+import Reveal from './Reveal';
 
 const steps = [
   {
@@ -33,10 +34,14 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-black">
+    <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-black overflow-hidden">
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-10 right-10 w-80 h-80 bg-fuchsia-500/5 rounded-full blur-3xl animate-float-slow" />
+      </div>
+
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-20">
+        <Reveal className="text-center mb-20">
           <div className="inline-flex items-center space-x-2 bg-pink-500/20 px-4 py-2 rounded-full border border-pink-500/30 mb-4">
             <Rocket className="w-4 h-4 text-pink-500" />
             <span className="text-sm font-medium text-pink-500">Cómo Trabajamos</span>
@@ -51,7 +56,7 @@ export default function Process() {
             Un proceso claro que se adapta tanto a una campaña digital como a la producción
             completa de un evento.
           </p>
-        </div>
+        </Reveal>
 
         {/* Steps */}
         <div className="relative">
@@ -59,7 +64,7 @@ export default function Process() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
             {steps.map((step, index) => (
-              <div key={step.title} className="relative">
+              <Reveal key={step.title} className="relative">
                 <div className="bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:shadow-pink-500/20 transition-all duration-300 border-2 border-gray-800 hover:border-pink-500 relative group">
                   <div
                     className={`absolute -top-4 -left-4 w-16 h-16 rounded-full bg-gradient-to-r ${step.color} flex items-center justify-center shadow-lg`}
@@ -88,13 +93,13 @@ export default function Process() {
                     <ArrowRight className="w-8 h-8 text-pink-300 transform rotate-90" />
                   </div>
                 )}
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
 
         {/* CTA */}
-        <div className="mt-20 text-center">
+        <Reveal className="mt-20 text-center">
           <div className="bg-gray-900 rounded-2xl p-12 shadow-xl border border-gray-800 max-w-4xl mx-auto">
             <div className="flex flex-col md:flex-row items-center justify-between gap-8">
               <div className="text-left flex-1">
@@ -114,7 +119,7 @@ export default function Process() {
               </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

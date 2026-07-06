@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Hero from './components/Hero';
+import BrandShowcase from './components/BrandShowcase';
 import Services from './components/Services';
 import Work from './components/Work';
 import Features from './components/Features';
@@ -19,6 +20,7 @@ function App() {
       <div id="home">
         <Hero />
       </div>
+      <BrandShowcase />
       <Services />
       <Work />
       <Features />

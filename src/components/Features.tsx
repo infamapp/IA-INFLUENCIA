@@ -1,5 +1,6 @@
 import { Compass, Layers, Sparkles, Users, Wand2, Zap } from 'lucide-react';
 import TiltCard from './TiltCard';
+import Reveal from './Reveal';
 
 const features = [
   {
@@ -45,7 +46,7 @@ export default function Features() {
     <section id="features" className="py-24 px-4 sm:px-6 lg:px-8 bg-black">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
+        <Reveal className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-fuchsia-500/20 px-4 py-2 rounded-full border border-fuchsia-500/30 mb-4">
             <Sparkles className="w-4 h-4 text-fuchsia-400" />
             <span className="text-sm font-medium text-fuchsia-400">Por qué Infama Creative</span>
@@ -56,7 +57,7 @@ export default function Features() {
               capacidad de producción real
             </span>
           </h2>
-        </div>
+        </Reveal>
 
         {/* Features Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

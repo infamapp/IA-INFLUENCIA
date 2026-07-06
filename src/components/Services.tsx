@@ -1,5 +1,6 @@
 import { Brain, Building2, Film, Megaphone, Sparkles } from 'lucide-react';
 import TiltCard from './TiltCard';
+import Reveal from './Reveal';
 
 const pillars = [
   {
@@ -61,7 +62,7 @@ export default function Services() {
     <section id="services" className="py-24 px-4 sm:px-6 lg:px-8 bg-black">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
+        <Reveal className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-pink-500/20 px-4 py-2 rounded-full border border-pink-500/30 mb-4">
             <Sparkles className="w-4 h-4 text-pink-500" />
             <span className="text-sm font-medium text-pink-500">Qué Hacemos</span>
@@ -76,7 +77,7 @@ export default function Services() {
             De la estrategia digital al montaje físico de un evento: diseñamos, producimos y
             ejecutamos cada pieza de la experiencia de marca.
           </p>
-        </div>
+        </Reveal>
 
         {/* Pillars Grid */}
         <div className="grid md:grid-cols-2 gap-8">

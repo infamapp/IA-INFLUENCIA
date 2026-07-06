@@ -106,10 +106,15 @@ export default function Hero() {
               {/* Center logo badge */}
               <div
                 className="absolute left-1/2 top-1/2 preserve-3d"
-                style={{ transform: 'translate(-50%, -50%) translate3d(0, 0, 100px)' }}
+                style={{ transform: 'translate(-50%, -50%) translate3d(0, 0, 110px)' }}
               >
-                <div className="bg-gradient-to-br from-pink-500 to-fuchsia-500 rounded-3xl w-32 h-32 flex items-center justify-center shadow-2xl shadow-pink-500/40 animate-float">
-                  <span className="text-white font-black text-2xl tracking-tight">IC</span>
+                <div className="relative w-44 h-32 animate-float flex items-center justify-center">
+                  <div className="absolute inset-0 bg-pink-500/40 blur-2xl rounded-full" />
+                  <img
+                    src={`${import.meta.env.BASE_URL}image.png`}
+                    alt="The INFAMA Creative"
+                    className="relative w-full h-full object-contain drop-shadow-[0_0_25px_rgba(236,72,153,0.5)]"
+                  />
                 </div>
               </div>
             </div>

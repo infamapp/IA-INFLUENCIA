@@ -55,3 +55,17 @@
 
 .perspective-1000 { perspective: 1200px; }
 .preserve-3d { transform-style: preserve-3d; }
+
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(var(--orbit-radius, 160px)) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(var(--orbit-radius, 160px)) rotate(-360deg); }
+}
+
+.animate-orbit { animation: orbit linear infinite; }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee { animation: marquee 22s linear infinite; }
