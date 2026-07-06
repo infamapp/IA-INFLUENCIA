@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Hero from './components/Hero';
 import Services from './components/Services';
+import Work from './components/Work';
 import Features from './components/Features';
 import Process from './components/Process';
 import Pricing from './components/Pricing';
@@ -15,8 +16,11 @@ function App() {
   return (
     <div className="min-h-screen bg-black">
       <Navigation activeSection={activeSection} setActiveSection={setActiveSection} />
-      <Hero />
+      <div id="home">
+        <Hero />
+      </div>
       <Services />
+      <Work />
       <Features />
       <Process />
       <Pricing />

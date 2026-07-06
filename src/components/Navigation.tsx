@@ -12,8 +12,19 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
   const navItems = [
     { id: 'home', label: 'Inicio' },
     { id: 'services', label: 'Servicios' },
-    { id: 'features', label: 'Características' },
+    { id: 'work', label: 'Producciones' },
+    { id: 'features', label: 'Nosotros' },
+    { id: 'pricing', label: 'Cómo Trabajamos' },
   ];
+
+  const goToSection = (id: string) => {
+    setActiveSection(id);
+    if (id === 'home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <nav className="fixed top-0 w-full bg-black/95 backdrop-blur-sm z-50 border-b border-gray-800">
@@ -29,7 +40,7 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
             {navItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => setActiveSection(item.id)}
+                onClick={() => goToSection(item.id)}
                 className={`text-sm font-medium transition-colors ${
                   activeSection === item.id
                     ? 'text-pink-500'
@@ -39,7 +50,10 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
                 {item.label}
               </button>
             ))}
-            <button className="bg-gradient-to-r from-pink-600 to-fuchsia-500 text-white px-6 py-2.5 rounded-lg font-medium hover:shadow-lg hover:shadow-pink-500/30 transition-all duration-300">
+            <button
+              onClick={() => goToSection('contact')}
+              className="bg-gradient-to-r from-pink-600 to-fuchsia-500 text-white px-6 py-2.5 rounded-lg font-medium hover:shadow-lg hover:shadow-pink-500/30 transition-all duration-300"
+            >
               Contáctanos
             </button>
           </div>
@@ -64,7 +78,7 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
               <button
                 key={item.id}
                 onClick={() => {
-                  setActiveSection(item.id);
+                  goToSection(item.id);
                   setMobileMenuOpen(false);
                 }}
                 className={`block w-full text-left px-4 py-2 text-sm font-medium ${
@@ -76,8 +90,14 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
                 {item.label}
               </button>
             ))}
-            <button className="w-full bg-gradient-to-r from-pink-600 to-fuchsia-500 text-white px-6 py-2.5 rounded-lg font-medium">
-              Comenzar Gratis
+            <button
+              onClick={() => {
+                goToSection('contact');
+                setMobileMenuOpen(false);
+              }}
+              className="w-full bg-gradient-to-r from-pink-600 to-fuchsia-500 text-white px-6 py-2.5 rounded-lg font-medium"
+            >
+              Contáctanos
             </button>
           </div>
         )}

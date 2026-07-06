@@ -2,10 +2,10 @@ import { Facebook, Instagram, Linkedin, Twitter, Youtube, Mail } from 'lucide-re
 
 export default function Footer() {
   const footerLinks = {
-    Producto: ['Características', 'Precios', 'Integraciones', 'Casos de Uso', 'Actualizaciones'],
-    Recursos: ['Blog', 'Guías', 'Webinars', 'Comunidad', 'Soporte'],
-    Empresa: ['Sobre Nosotros', 'Carreras', 'Prensa', 'Partners', 'Contacto'],
-    Legal: ['Términos', 'Privacidad', 'Cookies', 'Licencias', 'Seguridad']
+    Servicios: ['Marketing & IA', 'Publicidad & Branding', 'Producción Audiovisual', 'Espacios & Eventos'],
+    Producciones: ['Videoclips', 'Festivales & Eventos', 'Locales de Ocio', 'Campañas de Marca'],
+    Empresa: ['Nosotros', 'Cómo Trabajamos', 'Contacto'],
+    Legal: ['Términos', 'Privacidad', 'Cookies']
   };
 
   const socialLinks = [
@@ -27,7 +27,7 @@ export default function Footer() {
                 Mantente Actualizado
               </h3>
               <p className="text-gray-400">
-                Recibe tips, estrategias y actualizaciones exclusivas para creadores.
+                Novedades de nuestras producciones, eventos y proyectos de marca.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3">
@@ -56,8 +56,8 @@ export default function Footer() {
               <img src={`${import.meta.env.BASE_URL}image.png`} alt="The INFAMA Creative" className="h-10" />
             </div>
             <p className="text-gray-400 mb-6 max-w-xs">
-              La plataforma todo-en-uno que empodera a creadores de contenido
-              para automatizar, crecer y monetizar su presencia digital.
+              Agencia creativa de marketing digital e IA, publicidad, branding, producción
+              audiovisual y diseño de espacios y eventos.
             </p>
 
             {/* Social Links */}
@@ -99,7 +99,7 @@ export default function Footer() {
         <div className="pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 text-sm">
-              © 2024 The INFAMA Creative. Todos los derechos reservados.
+              © {new Date().getFullYear()} The INFAMA Creative. Todos los derechos reservados.
             </p>
 
             <div className="flex items-center space-x-6 text-sm">
